@@ -1,0 +1,131 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo Gris Claro */
+  }
+  
+  header {
+    background-color: #e40303; /* Fondo Blanco */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Alinea el logo a la derecha */
+    align-items: center;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  .titulo {
+    color: white; /* O puedes usar #ffffff */
+    font-size: 30px; /* Ajusta el tamaño de la fuente según tus necesidades */
+    font-weight: bold; /* Puedes ajustar el peso de la fuente */
+    text-align: center; /* Alinea el texto al centro, ajusta según tus necesidades */
+    /* Otros estilos opcionales */
+    font-family: Arial, sans-serif; /* Puedes cambiar la familia de la fuente */
+    /*text-transform: uppercase;  Opcional: convierte el texto a mayúsculas */
+    margin: 20px; /* Ajusta el margen según tus necesidades */
+}
+  
+  .logo {
+    width: 300px;
+    height: auto;
+    display: inline-block; /* Asegura que el logo se comporte como un elemento en línea */
+  }
+  .column1 {
+    flex: 3; /* Hace que todas las columnas tengan el mismo ancho */
+    margin: 0 10px; /* Añade espacio entre las columnas */
+    color: white; /* Color del texto dentro de las columnas */
+    /*background-color: #444;  Color de fondo de las columnas */
+    padding: 10px; /* Añade espacio dentro de las columnas */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total de las columnas */
+  }
+  .column2 {
+    flex: 1; /* Hace que todas las columnas tengan el mismo ancho */
+    margin: 0 10px; /* Añade espacio entre las columnas */
+    color: white; /* Color del texto dentro de las columnas */
+    /*background-color: #444;  Color de fondo de las columnas */
+    padding: 10px; /* Añade espacio dentro de las columnas */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total de las columnas */
+  }
+
+  /* Estilos del Formulario */
+  #data-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #data-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  #chart-data {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-family: monospace;
+  }
+  
+  #data-form button[type="submit"] {
+    background-color: #dc143c; /* Rojo */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #data-form button[type="submit"]:hover {
+    background-color: #b00020; /* Rojo más oscuro */
+  }
+
+  #data-form button[type="button"] {
+    background-color: #dc143c; /* Rojo */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #data-form button[type="button"]:hover {
+    background-color: #b00020; /* Rojo más oscuro */
+  }
+  
+  /* Estilos del Portlet */
+  .portlet {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .portlet-header {
+    background-color: #ffb6c1; /* Rosado */
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .portlet-body {
+    padding: 15px;
+    border: 1px solid #ffb6c1; /* Rosado */
+    border-radius: 0 0 5px 5px;
+  }
+  

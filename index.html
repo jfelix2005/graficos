@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Gráficos Estadísticos de Dominiotech</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/timeline.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>    
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="script7.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .icon-buttons {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .icon-buttons button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+            padding: 0;
+        }
+        .icon-buttons button i {
+            font-size: 24px;
+            color: #333;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px;
+        }
+        .left-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .right-buttons {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="column1">
+            <h1 class="titulo">Generador de Gráficos Estadísticos en Highcharts</h1>
+        </div>
+        <div class="column2">
+            <img src="https://i.postimg.cc/TYThxMsQ/dom-logo-1.png" alt="Logo Dominiotech" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Crea tu Gráfico</h2>
+            <form id="data-form">
+                <div class="form-group">
+                    <label for="chart-data">Ingresa código JSON:</label>
+                    <textarea id="chart-data" placeholder="Ingresa el código JSON aquí..."></textarea>
+                </div>
+                <div class="button-container">
+                    <div class="left-buttons">
+                        <button type="submit">Generar Gráfico</button>
+                        <button id="limpiar" type="button">Limpiar</button>
+                    </div>
+                    <div class="right-buttons">
+                        <button id="icon1" type="button" title="Gráfico Columna"><i class="fas fa-chart-column"></i></button>
+                        <button id="icon2" type="button" title="Gráfico Barras"><i class="fas fa-chart-bar"></i></button>
+                        <button id="icon3" type="button" title="Gráfico Pastel"><i class="fas fa-chart-pie"></i></button>
+                        <button id="icon4" type="button" title="Gráfico Línea"><i class="fas fa-chart-line"></i></button>
+                        <button id="icon5" type="button" title="Gráfico TimeLine"><i class="fas fa-chart-area"></i></button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="chart-portlet" class="portlet">
+                <div class="portlet-header">
+                    <h3>Gráfico Generado Automático</h3>
+                </div>
+                <div id="container" class="portlet-body"></div>
+            </div>
+            <h3><a href="https://www.highcharts.com/demo/highcharts/column-basic">Aquí puede encontrar más información para generar json</a></h3>
+        </div>
+        
+    </main>
+
+    <script>
+        // JavaScript para manejar el botón "Limpiar"
+        document.getElementById('limpiar').addEventListener('click', function() {
+            document.getElementById('chart-data').value = '';
+        });
+
+        // JavaScript para manejar la carga de archivos predefinidos
+        function loadPredefinedJson(filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('chart-data').value = data;
+                })
+                .catch(error => console.error('Error al cargar el archivo JSON:', error));
+        }
+
+        document.getElementById('icon1').addEventListener('click', function() {
+            loadPredefinedJson('column.json'); // Cambia 'column.json' a la ruta del archivo correspondiente
+        });
+
+        document.getElementById('icon2').addEventListener('click', function() {
+            loadPredefinedJson('bar.json'); // Cambia 'bar.json' a la ruta del archivo correspondiente
+        });
+
+        document.getElementById('icon4').addEventListener('click', function() {
+            loadPredefinedJson('line.json'); // Cambia 'line.json' a la ruta del archivo correspondiente
+        });
+
+        document.getElementById('icon3').addEventListener('click', function() {
+            loadPredefinedJson('pie.json'); // Cambia 'pie.json' a la ruta del archivo correspondiente
+        });
+
+        document.getElementById('icon5').addEventListener('click', function() {
+            loadPredefinedJson('timeline.json'); // Cambia 'timeline.json' a la ruta del archivo correspondiente
+        });
+    </script>
+</body>
+</html>
